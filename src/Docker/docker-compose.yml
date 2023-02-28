@@ -5,7 +5,7 @@ services:
     image: ${DOCKER_REGISTRY-}myfrontend
     build:
       context: .
-      dockerfile: MyFrontEnd/Dockerfile
+      dockerfile: ../MyFrontEnd/Dockerfile
     ports:
       - "51000:50001"
 
@@ -20,7 +20,7 @@ services:
     image: ${DOCKER_REGISTRY-}mybackend
     build:
       context: .
-      dockerfile: MyBackEnd/Dockerfile
+      dockerfile: ../MyBackEnd/Dockerfile
     ports:
       - "52000:50001"
 
