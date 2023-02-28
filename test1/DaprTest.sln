@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DaprCounter", "DaprCounter\DaprCounter.csproj", "{8D838539-23E1-4FD6-A3E0-9D6D18909351}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DaprCounter", "DaprCounter\DaprCounter.csproj", "{8D838539-23E1-4FD6-A3E0-9D6D18909351}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFrontEnd", "MyFrontEnd\MyFrontEnd.csproj", "{89C402E1-3904-475C-8711-AE7199E0035B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFrontEnd", "MyFrontEnd\MyFrontEnd.csproj", "{89C402E1-3904-475C-8711-AE7199E0035B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyBackEnd", "MyBackEnd\MyBackEnd.csproj", "{F2C90BEE-52D3-4753-879F-CFB3074B7332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBackEnd", "MyBackEnd\MyBackEnd.csproj", "{F2C90BEE-52D3-4753-879F-CFB3074B7332}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FC6304E4-23EB-4E9E-8A61-713D9ACF95C2}"
 EndProject
