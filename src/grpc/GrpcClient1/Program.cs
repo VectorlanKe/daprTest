@@ -18,22 +18,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", async (DaprClient daprClient) =>
+app.MapGet("/hello", async (DaprClient daprClient) =>
     {
-        HelloReply? result =
-            await daprClient.InvokeMethodGrpcAsync<HelloRequest, HelloReply>("myBackEndGrpc",
-                nameof(Greeter.GreeterClient.SayHello),new HelloRequest
-                {
-                    Name= "dapr client"
-                });
+        HelloReply? result = await daprClient.InvokeMethodGrpcAsync<HelloRequest, HelloReply>("GrpcService1", nameof(Greeter.GreeterClient.SayHello),new HelloRequest
+        {
+            Name= "dapr client"
+        });
         return result.Message;
     })
-    .WithName("GetWeatherForecast")
+    .WithName("hello")
     .WithOpenApi();
 
 app.Run();
