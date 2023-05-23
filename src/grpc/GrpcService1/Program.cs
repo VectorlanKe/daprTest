@@ -1,5 +1,7 @@
 using GrpcService1.Services;
 
+// dapr run --app-id GrpcService1 --app-port 5156 --app-protocol grpc -- dotnet run
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Additional configuration is required to successfully run gRPC on macOS.
@@ -7,13 +9,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
-builder.Services.AddSingleton<GreeterService>();
+// builder.Services.AddSingleton<GreeterService>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.MapGrpcService<GreeterService>();
-app.MapGrpcService<GreeterServiceDapr>();
+//[Obsolete("[DEPRECATION NOTICE] InvokeService is deprecated and will be removed in the future, please use proxy mode instead,  new grpc (\"1\")")]
+// app.MapGrpcService<GreeterServiceDapr>();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
 app.Run();

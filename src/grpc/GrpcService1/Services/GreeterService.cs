@@ -22,7 +22,7 @@ namespace GrpcService1.Services
             });
         }
     }
-
+    [Obsolete("[DEPRECATION NOTICE] InvokeService is deprecated and will be removed in the future, please use proxy mode instead,  new grpc (\"1\")")]
     public class GreeterServiceDapr : AppCallback.AppCallbackBase
     {
         private readonly GreeterService _greeterService;
