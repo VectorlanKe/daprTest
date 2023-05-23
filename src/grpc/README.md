@@ -9,7 +9,7 @@
     "dapr": {
       "commandName": "Executable",
       "executablePath": "dapr",
-      "commandLineArgs": "run --app-id GrpcService1 --app-port 5056 --app-protocol grpc -- dotnet run",
+      "commandLineArgs": "run --app-id GrpcService1 --app-port 5156 --app-protocol grpc -- dotnet run",
       "workingDirectory": "./",
       "launchUrl": "swagger",
       "environmentVariables": {
@@ -21,7 +21,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,
-      "applicationUrl": "http://localhost:5056",
+      "applicationUrl": "http://localhost:5156",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -40,9 +40,7 @@
 dapr run --app-id GrpcService1 --app-port 5156 --app-protocol grpc -- dotnet run
 #dapr run --app-id GrpcService1 --app-port 5156 --app-protocol grpc
 
-#客户端 （dapr会动态http port、grpc port，-- dotnet run 会携带daprclient端口配置信息，daprd默认使用3500、50001端口与daprclient访问端口一致）
-dapr run --app-id GrpcClient1 --app-port 5157 --app-protocol grpc -- dotnet run
-#dapr run --app-id GrpcClient1 --app-port 5157 --app-protocol grpc
-#daprd --app-id GrpcClient1 --app-port 5157 --app-protocol grpc
+#客户端 （dapr会动态http port、grpc port、需要placement，daprd默认使用3500、50001端口与daprclient访问端口一致）
+daprd --app-id GrpcClient1 --app-port 5157 --app-protocol grpc
 ```
 
