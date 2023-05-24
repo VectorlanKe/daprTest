@@ -9,16 +9,18 @@ namespace GrpcService1.Services
     public class GreeterService : Greeter.GreeterBase
     {
         private readonly ILogger<GreeterService> _logger;
-        public GreeterService(ILogger<GreeterService> logger)
+        private readonly IConfiguration _configuration;
+        public GreeterService(ILogger<GreeterService> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
             return Task.FromResult(new HelloReply
             {
-                Message = "Hello " + request.Name
+                Message = $"service({_configuration["urls"]}):Hello {request.Name}" 
             });
         }
     }

@@ -44,3 +44,9 @@ dapr run --app-id GrpcService1 --app-port 5156 --app-protocol grpc -- dotnet run
 daprd --app-id GrpcClient1 --app-port 5157 --app-protocol grpc
 ```
 
+
+
+#### 服务注册发现
+
+默认局域网mDNS方式、可以使用Consul（配置初始化生成的.dap/config.yaml文件）[源码相关文档](https://github.com/dapr/components-contrib/tree/master/nameresolution/consul)
+
