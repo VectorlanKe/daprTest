@@ -50,3 +50,22 @@ daprd --app-id GrpcClient1 --app-port 5157 --app-protocol grpc
 
 默认局域网mDNS方式、可以使用Consul（配置初始化生成的.dap/config.yaml文件）[源码相关文档](https://github.com/dapr/components-contrib/tree/master/nameresolution/consul)
 
+```json
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  name: daprConfig
+spec:
+  tracing:
+    samplingRate: "1"
+    zipkin:
+      endpointAddress: http://localhost:9411/api/v2/spans
+  nameResolution:
+    component: "consul"
+    configuration:
+      client:
+        address: "192.168.62.152:8500"
+      selfRegister: true
+
+```
+
